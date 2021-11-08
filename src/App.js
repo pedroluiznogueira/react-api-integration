@@ -38,7 +38,7 @@ function App() {
      <form>
        <label>
          <p>New Item</p>
-         <input type="text" />
+         <input type="text" onChange={event => setItemInput(event.target.value)} value={itemInput}/>
        </label>
        <button type="submit">Submit</button>
      </form>
