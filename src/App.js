@@ -19,6 +19,14 @@ function App() {
     return () => mounted = false;
   }, [])
 
+  useEffect(() => {
+    if(alert) {
+      setTimeout(() => {
+        setAlert(false);
+      }, 1000)
+    }
+  }, [alert])
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setItem(itemInput).then(
