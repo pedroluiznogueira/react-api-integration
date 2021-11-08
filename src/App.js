@@ -3,6 +3,7 @@ import './App.css';
 import { getList } from './services/list';
 
 function App() {
+  const [itemInput, setItemInput] = useState('');
   const [list, setList] = useState([]);
 
   useEffect(() => {
