@@ -20,6 +20,8 @@ function App() {
   return(
     <div className="wrapper">
      <h1>My Grocery List</h1>
+
+     {/* get method */}
      <ul>
        {
         list.map(
@@ -30,6 +32,15 @@ function App() {
         )
        }
      </ul>
+
+     {/* post method */}
+     <form>
+       <label>
+         <p>New Item</p>
+         <input type="text" />
+       </label>
+       <button type="submit">Submit</button>
+     </form>
    </div>
   )
 }
