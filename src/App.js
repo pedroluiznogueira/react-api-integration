@@ -3,6 +3,7 @@ import './App.css';
 import { getList, setItem } from './services/list';
 
 function App() {
+  const [alert, setAlert] = useState(false);
   const [itemInput, setItemInput] = useState('');
   const [list, setList] = useState([]);
 
@@ -20,7 +21,12 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setItem(itemInput)
+    setItem(itemInput).then(
+      () => {
+        setItemInput('');
+        setAlert(true)
+      }
+    )
   };
 
   return(
@@ -38,6 +44,10 @@ function App() {
         )
        }
      </ul>
+
+     {
+      alert && <h2> Submit Successful</h2>
+     }
 
      {/* post method */}
      <form onSubmit={handleSubmit}>
