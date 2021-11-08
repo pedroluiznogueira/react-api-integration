@@ -23,6 +23,26 @@
     {
       "item": "orange",
       "id": 6
+    },
+    {
+      "item": "melon",
+      "id": 7
+    },
+    {
+      "item": "hot dog",
+      "id": 8
+    },
+    {
+      "item": "hamburguer",
+      "id": 9
+    },
+    {
+      "item": "juice",
+      "id": 10
+    },
+    {
+      "item": "grape",
+      "id": 11
     }
   ]
 }

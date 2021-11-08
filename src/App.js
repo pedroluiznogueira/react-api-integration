@@ -9,21 +9,23 @@ function App() {
 
   useEffect(() => {
     let mounted = true;
+    if(list.length && !alert) {
+      return;
+    }
     getList()
       .then(items => {
         if(mounted) {
           setList(items)
-          console.log(items)
         }
       })
     return () => mounted = false;
-  }, [])
+  }, [alert, list])
 
   useEffect(() => {
     if(alert) {
       setTimeout(() => {
         setAlert(false);
-      }, 1000)
+      }, 2000)
     }
   }, [alert])
 
