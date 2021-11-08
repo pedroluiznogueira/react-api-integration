@@ -11,6 +11,7 @@ function App() {
       .then(items => {
         if(mounted) {
           setList(items)
+          console.log(items)
         }
       })
     return () => mounted = false;
