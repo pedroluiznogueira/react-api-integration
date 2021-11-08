@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { getList } from './services/list';
+import { getList, setItem } from './services/list';
 
 function App() {
   const [itemInput, setItemInput] = useState('');
@@ -17,6 +17,11 @@ function App() {
       })
     return () => mounted = false;
   }, [])
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setItem(itemInput)
+  };
 
   return(
     <div className="wrapper">
@@ -35,7 +40,7 @@ function App() {
      </ul>
 
      {/* post method */}
-     <form>
+     <form onSubmit={handleSubmit}>
        <label>
          <p>New Item</p>
          <input type="text" onChange={event => setItemInput(event.target.value)} value={itemInput}/>
